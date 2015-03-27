@@ -9,7 +9,7 @@
 #import "BOXContentSDKConstants.h"
 
 // API URLs
-NSString *const BOXAPIBaseURL = @"https://api.box.com";
+NSString *const BOXAPIBaseURL = @"https://kszubzda.inside-box.net/api";
 NSString *const BOXAPIUploadBaseURL = @"https://upload.box.com/api";
 
 // API Versions

@@ -12,7 +12,7 @@
 #import <BoxContentSDK/BOXContentSDK.h>
 
 @interface LoginViewController ()
-
+@property (nonatomic, strong) UITabBarController *tabController;
 @end
 
 @implementation LoginViewController
@@ -20,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    
+    BrowseViewController *bvc = [[BrowseViewController alloc] init];
+    TagViewController *tvc = [[TagViewController alloc] init];
+    
+    bvc.tabBarItem.title = @"Browse";
+    //    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+    tvc.tabBarItem.title = @"Tag";
+    //    tvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+    
+    tabController.viewControllers = @[bvc, tvc];
+    self.tabController = tabController;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,19 +48,9 @@
         } else {
             NSLog(@"Successful login");
             
-            UITabBarController *tabController = [[UITabBarController alloc] init];
             
-            BrowseViewController *bvc = [[BrowseViewController alloc] init];
-            TagViewController *tvc = [[TagViewController alloc] init];
             
-            bvc.tabBarItem.title = @"Browse";
-            //    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
-            tvc.tabBarItem.title = @"Tag";
-            //    tvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
-            
-            tabController.viewControllers = @[bvc, tvc];
-            
-            [self presentViewController:tabController animated:YES completion:nil];
+            [self presentViewController:self.tabController animated:YES completion:nil];
         }
     } cancelBlock:nil];
 }

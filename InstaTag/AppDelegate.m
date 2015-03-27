@@ -22,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [BOXContentClient setClientID:@"8g05vv5jk10g36pwlnwlcgpxb841fu0a" clientSecret:@"hU3gHlLsOZGFe5HWS6EbbzrOYQUEEPYi"];
+    [BOXContentClient setClientID:@"l2udnyk90cs1uufaalfdh297h59o5yb4" clientSecret:@"WIePYijBJOlbofZBGGnKjKaCFVrBwMzH"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     LoginViewController *lvc = [[LoginViewController alloc] init];

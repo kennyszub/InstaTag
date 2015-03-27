@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01A41AC547D600FCB44D /* BOXMetadata.m */; };
 		C497E5931AC51DF200476FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5921AC51DF200476FC9 /* main.m */; };
 		C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5951AC51DF200476FC9 /* AppDelegate.m */; };
 		C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C497E59D1AC51DF200476FC9 /* Images.xcassets */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		112F01A31AC547D600FCB44D /* BOXMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadata.h; sourceTree = "<group>"; };
+		112F01A41AC547D600FCB44D /* BOXMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadata.m; sourceTree = "<group>"; };
 		4852EB4A7EDF1669DD3C67CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		99C4941343C342BD4AB1D695 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2CF3792433C9E48611CAB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,8 @@
 		C497E5B61AC521AA00476FC9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				112F01A31AC547D600FCB44D /* BOXMetadata.h */,
+				112F01A41AC547D600FCB44D /* BOXMetadata.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */,
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
 				C497E5C61AC538E300476FC9 /* TagViewController.m in Sources */,
 				C497E5C11AC538CD00476FC9 /* BrowseViewController.m in Sources */,
