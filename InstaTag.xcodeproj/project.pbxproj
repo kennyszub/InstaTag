@@ -158,15 +158,15 @@
 		C497E5B81AC521B900476FC9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C497E5CD1AC53FAB00476FC9 /* LoginViewController.h */,
+				C497E5CE1AC53FAB00476FC9 /* LoginViewController.m */,
+				C497E5CF1AC53FAB00476FC9 /* LoginViewController.xib */,
 				C497E5BE1AC538CD00476FC9 /* BrowseViewController.h */,
 				C497E5BF1AC538CD00476FC9 /* BrowseViewController.m */,
 				C497E5C01AC538CD00476FC9 /* BrowseViewController.xib */,
 				C497E5C31AC538E300476FC9 /* TagViewController.h */,
 				C497E5C41AC538E300476FC9 /* TagViewController.m */,
 				C497E5C51AC538E300476FC9 /* TagViewController.xib */,
-				C497E5CD1AC53FAB00476FC9 /* LoginViewController.h */,
-				C497E5CE1AC53FAB00476FC9 /* LoginViewController.m */,
-				C497E5CF1AC53FAB00476FC9 /* LoginViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

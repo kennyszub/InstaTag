@@ -28,16 +28,27 @@
 }
 
 - (IBAction)onTagBoxFolderButton:(id)sender {
-    BOXItemPickerViewController *itemPickerController = [[BOXItemPickerViewController alloc] init];
+    BOXContentClient *client = [BOXContentClient defaultClient];
+    BOXItemPickerViewController *itemPickerController = [[BOXItemPickerViewController alloc] initWithClient:client rootFolderID:@"0" thumbnailsEnabled:YES cachedThumbnailsPath:nil selectableObjectType:BOXItemPickerObjectTypeFileAndFolder];
     itemPickerController.delegate = self;
-    [self presentViewController:itemPickerController animated:YES completion:nil];
+
+    BOXItemPickerNavigationController *navController = [[BOXItemPickerNavigationController alloc] initWithRootViewController:itemPickerController];
+    [self presentViewController:navController animated:YES completion:nil];
     
 }
 
 #pragma mark file picker delegate methods
 - (void)itemPickerControllerDidCancel:(BOXItemPickerViewController *)controller {
-    NSLog(@"cancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFile:(BOXFile *)file {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+- (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFolder:(BOXFolder *)folder {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

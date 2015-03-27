@@ -48,8 +48,6 @@
         } else {
             NSLog(@"Successful login");
             
-            
-            
             [self presentViewController:self.tabController animated:YES completion:nil];
         }
     } cancelBlock:nil];
