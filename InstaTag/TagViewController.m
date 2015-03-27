@@ -83,8 +83,7 @@
     
     
     BOXContentClient *contentClient = [BOXContentClient defaultClient];
-    NSString *localFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:path];
-    BOXFileUploadRequest *uploadRequest = [contentClient fileUploadRequestToFolderWithID:@"0" fromLocalFilePath:localFilePath];
+    BOXFileUploadRequest *uploadRequest = [contentClient fileUploadRequestToFolderWithID:@"0" fromLocalFilePath:path];
     [SVProgressHUD show];
 
     [uploadRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
@@ -180,6 +179,9 @@
             NSLog(@"%@", metadata.properties);
         } else {
             NSLog(@"error %@", error.description);
+            BOXMetadataUpdateRequest *updateRequest = [[BOXMetadataUpdateRequest alloc] initWithFileID:fileId properties:keywords];
+            [self.client prepareRequest:updateRequest];
+            //[createRequest performRequestWithCompletion:nil];
         }
     }];
     

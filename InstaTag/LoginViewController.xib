@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -14,8 +14,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO7-gB-97K">
-                    <rect key="frame" x="109" y="360" width="103" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO7-gB-97K">
+                    <rect key="frame" x="109" y="269" width="103" height="30"/>
                     <state key="normal" title="Login with Box">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -23,11 +23,27 @@
                         <action selector="onLoginButton:" destination="-1" eventType="touchUpInside" id="2KC-lJ-Ncr"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="box-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pxw-mN-hMj">
+                    <rect key="frame" x="40" y="113" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="cvp-5R-XwA"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XO7-gB-97K" firstAttribute="top" secondItem="Pxw-mN-hMj" secondAttribute="bottom" constant="28" id="4jH-oo-Qed"/>
+                <constraint firstAttribute="centerX" secondItem="XO7-gB-97K" secondAttribute="centerX" id="95s-Ku-yvr"/>
+                <constraint firstAttribute="centerY" secondItem="XO7-gB-97K" secondAttribute="centerY" id="N2f-Eg-Agu"/>
+                <constraint firstItem="Pxw-mN-hMj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="bHz-q1-FdN"/>
+                <constraint firstItem="Pxw-mN-hMj" firstAttribute="centerX" secondItem="XO7-gB-97K" secondAttribute="centerX" id="hK3-NS-KGi"/>
+            </constraints>
             <point key="canvasLocation" x="860" y="685"/>
         </view>
     </objects>
+    <resources>
+        <image name="box-logo" width="1024" height="565"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
