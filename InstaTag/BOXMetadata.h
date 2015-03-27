@@ -9,5 +9,8 @@
 #import "BOXModel.h"
 
 @interface BOXMetadata : BOXModel
-
+@property (nonatomic, readwrite, strong) NSString *properties;
+@property (nonatomic, readwrite, strong) NSString *type;
+@property (nonatomic, readwrite, strong) NSString *parent;
+@property (nonatomic, readwrite, strong) NSString *metadataId;
 @end

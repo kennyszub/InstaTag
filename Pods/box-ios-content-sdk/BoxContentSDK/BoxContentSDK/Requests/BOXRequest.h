@@ -15,10 +15,13 @@
 @class BOXComment;
 @class BOXCollection;
 @class BOXFileVersion;
+@class BOXMetadata;
 
 typedef void (^BOXErrorBlock)(NSError *error);
 
 typedef void (^BOXCollaborationBlock)(BOXCollaboration *collaboration, NSError *error);
+
+typedef void (^BOXMetadataBlock)(BOXMetadata *metadata, NSError *error);
 
 typedef void (^BOXItemBlock)(BOXItem *item, NSError *error);
 

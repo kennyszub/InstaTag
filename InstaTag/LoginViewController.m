@@ -22,8 +22,8 @@
     // Do any additional setup after loading the view from its nib.
     UITabBarController *tabController = [[UITabBarController alloc] init];
     
-    BrowseViewController *bvc = [[BrowseViewController alloc] init];
-    TagViewController *tvc = [[TagViewController alloc] init];
+    BrowseViewController *bvc = [[BrowseViewController alloc] initWithClient:[BOXContentClient defaultClient]];
+    TagViewController *tvc = [[TagViewController alloc] initWithClient:[BOXContentClient defaultClient]];
     
     bvc.tabBarItem.title = @"Browse";
     //    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
@@ -47,7 +47,6 @@
             [alertView show];
         } else {
             NSLog(@"Successful login");
-            
             [self presentViewController:self.tabController animated:YES completion:nil];
         }
     } cancelBlock:nil];

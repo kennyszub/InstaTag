@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BoxContentSDK/BOXContentSDK.h>
 
 @interface TagViewController : UIViewController
-
+- (instancetype)initWithClient:(BOXContentClient *)client;
 @end

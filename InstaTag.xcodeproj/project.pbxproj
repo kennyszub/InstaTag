@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01A41AC547D600FCB44D /* BOXMetadata.m */; };
+		112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01A71AC54FB400FCB44D /* BOXMetadataInfoRequest.m */; };
+		112F01AB1AC5621E00FCB44D /* BOXMetadataCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01AA1AC5621E00FCB44D /* BOXMetadataCreateRequest.m */; };
+		112F01AE1AC569F500FCB44D /* BOXMetadataUpdateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01AD1AC569F500FCB44D /* BOXMetadataUpdateRequest.m */; };
 		C497E5931AC51DF200476FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5921AC51DF200476FC9 /* main.m */; };
 		C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5951AC51DF200476FC9 /* AppDelegate.m */; };
 		C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C497E59D1AC51DF200476FC9 /* Images.xcassets */; };
@@ -35,6 +38,12 @@
 /* Begin PBXFileReference section */
 		112F01A31AC547D600FCB44D /* BOXMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadata.h; sourceTree = "<group>"; };
 		112F01A41AC547D600FCB44D /* BOXMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadata.m; sourceTree = "<group>"; };
+		112F01A61AC54FB400FCB44D /* BOXMetadataInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadataInfoRequest.h; sourceTree = "<group>"; };
+		112F01A71AC54FB400FCB44D /* BOXMetadataInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadataInfoRequest.m; sourceTree = "<group>"; };
+		112F01A91AC5621E00FCB44D /* BOXMetadataCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadataCreateRequest.h; sourceTree = "<group>"; };
+		112F01AA1AC5621E00FCB44D /* BOXMetadataCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadataCreateRequest.m; sourceTree = "<group>"; };
+		112F01AC1AC569F500FCB44D /* BOXMetadataUpdateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadataUpdateRequest.h; sourceTree = "<group>"; };
+		112F01AD1AC569F500FCB44D /* BOXMetadataUpdateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadataUpdateRequest.m; sourceTree = "<group>"; };
 		4852EB4A7EDF1669DD3C67CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		99C4941343C342BD4AB1D695 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2CF3792433C9E48611CAB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +153,12 @@
 			children = (
 				112F01A31AC547D600FCB44D /* BOXMetadata.h */,
 				112F01A41AC547D600FCB44D /* BOXMetadata.m */,
+				112F01A61AC54FB400FCB44D /* BOXMetadataInfoRequest.h */,
+				112F01A71AC54FB400FCB44D /* BOXMetadataInfoRequest.m */,
+				112F01A91AC5621E00FCB44D /* BOXMetadataCreateRequest.h */,
+				112F01AA1AC5621E00FCB44D /* BOXMetadataCreateRequest.m */,
+				112F01AC1AC569F500FCB44D /* BOXMetadataUpdateRequest.h */,
+				112F01AD1AC569F500FCB44D /* BOXMetadataUpdateRequest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -325,9 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112F01AE1AC569F500FCB44D /* BOXMetadataUpdateRequest.m in Sources */,
 				112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */,
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
+				112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */,
 				C497E5C61AC538E300476FC9 /* TagViewController.m in Sources */,
+				112F01AB1AC5621E00FCB44D /* BOXMetadataCreateRequest.m in Sources */,
 				C497E5C11AC538CD00476FC9 /* BrowseViewController.m in Sources */,
 				C497E5931AC51DF200476FC9 /* main.m in Sources */,
 				C497E5D01AC53FAB00476FC9 /* LoginViewController.m in Sources */,

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BrowseViewController : UIViewController
-
+- (instancetype)initWithClient:(BOXContentClient *)client;
 @end

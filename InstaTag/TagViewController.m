@@ -8,17 +8,29 @@
 
 #import "TagViewController.h"
 #import <BoxContentSDK/BOXContentSDK.h>
-
+#import "BOXMetadataInfoRequest.h"
+#import "BOXMetadata.h"
+#import "BOXMetadataCreateRequest.h"
+#import "BOXMetadataUpdateRequest.h"
 
 @interface TagViewController () <BOXItemPickerDelegate>
-
+@property (nonatomic, readwrite, strong) BOXContentClient *client;
 @end
 
 @implementation TagViewController
 
+- (instancetype)initWithClient:(BOXContentClient *)client {
+    self = [super init];
+    if (self) {
+        _client = client;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
 
 }
 
@@ -26,6 +38,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)onTagBoxFolderButton:(id)sender {
     BOXContentClient *client = [BOXContentClient defaultClient];
@@ -44,7 +57,6 @@
 
 - (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFile:(BOXFile *)file {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
 
 - (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFolder:(BOXFolder *)folder {
