@@ -40,7 +40,7 @@
 }
 
 - (IBAction)onLoginButton:(id)sender {
-    BOXContentClient *client = [BOXContentClient clientForNewSession];
+    BOXContentClient *client = [BOXContentClient defaultClient];
     [client authenticateWithCompletionBlock:^(BOXUser *user, NSError *error) {
         if (error) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Login failed, please try again" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
