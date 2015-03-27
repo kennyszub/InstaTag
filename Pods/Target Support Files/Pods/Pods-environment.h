@@ -48,3 +48,21 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 2
 
+// box-ios-content-sdk
+#define COCOAPODS_POD_AVAILABLE_box_ios_content_sdk
+#define COCOAPODS_VERSION_MAJOR_box_ios_content_sdk 1
+#define COCOAPODS_VERSION_MINOR_box_ios_content_sdk 0
+#define COCOAPODS_VERSION_PATCH_box_ios_content_sdk 0
+
+// box-ios-content-sdk/logger
+#define COCOAPODS_POD_AVAILABLE_box_ios_content_sdk_logger
+#define COCOAPODS_VERSION_MAJOR_box_ios_content_sdk_logger 1
+#define COCOAPODS_VERSION_MINOR_box_ios_content_sdk_logger 0
+#define COCOAPODS_VERSION_PATCH_box_ios_content_sdk_logger 0
+
+// box-ios-content-sdk/no-arc
+#define COCOAPODS_POD_AVAILABLE_box_ios_content_sdk_no_arc
+#define COCOAPODS_VERSION_MAJOR_box_ios_content_sdk_no_arc 1
+#define COCOAPODS_VERSION_MINOR_box_ios_content_sdk_no_arc 0
+#define COCOAPODS_VERSION_PATCH_box_ios_content_sdk_no_arc 0
+

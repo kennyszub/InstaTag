@@ -1,0 +1,1 @@
+../../../../box-ios-content-sdk/BoxContentSDK/BoxContentSDK/Categories/NSError+BOXAdditions.h

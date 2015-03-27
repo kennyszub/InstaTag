@@ -20,11 +20,29 @@ PODS:
   - AFNetworking/UIKit (2.5.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - box-ios-content-sdk (1.0.0):
+    - box-ios-content-sdk/logger (= 1.0.0)
+    - box-ios-content-sdk/no-arc (= 1.0.0)
+  - box-ios-content-sdk/logger (1.0.0)
+  - box-ios-content-sdk/no-arc (1.0.0):
+    - box-ios-content-sdk/logger
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - box-ios-content-sdk (from `git@gitenterprise.inside-box.net:Mobile/box-ios-content-sdk.git`, branch `dev`)
+
+EXTERNAL SOURCES:
+  box-ios-content-sdk:
+    :branch: dev
+    :git: git@gitenterprise.inside-box.net:Mobile/box-ios-content-sdk.git
+
+CHECKOUT OPTIONS:
+  box-ios-content-sdk:
+    :commit: af7b19efc9a981ca7f7dd5201f5b2c0f0b2afaa5
+    :git: git@gitenterprise.inside-box.net:Mobile/box-ios-content-sdk.git
 
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
+  box-ios-content-sdk: 2d782cb7f1ac468ea9a2c61610998c7167e2a4df
 
 COCOAPODS: 0.35.0
