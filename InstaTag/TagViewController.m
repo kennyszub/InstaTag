@@ -7,6 +7,7 @@
 //
 
 #import "TagViewController.h"
+#import <BoxContentSDK/BOXContentSDK.h>
 
 @interface TagViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    BOXContentClient *client = [BOXContentClient clientForNewSession];
+    [client authenticateWithCompletionBlock:^(BOXUser *user, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Login failed, please try again" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alertView show];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Success!" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alertView show];
+        }
+    } cancelBlock:nil];
 }
 
 - (void)didReceiveMemoryWarning {

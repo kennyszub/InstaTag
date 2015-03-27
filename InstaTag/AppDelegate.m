@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "BrowseViewController.h"
 #import "TagViewController.h"
+#import "HomeViewController.h"
+#import <BoxContentSDK/BOXContentSDK.h>
 
 @interface AppDelegate ()
 
@@ -20,6 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [BOXContentClient setClientID:@"8g05vv5jk10g36pwlnwlcgpxb841fu0a" clientSecret:@"hU3gHlLsOZGFe5HWS6EbbzrOYQUEEPYi"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     UITabBarController *tabController = [[UITabBarController alloc] init];
