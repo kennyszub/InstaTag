@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagViewController">
             <connections>
+                <outlet property="notifTextLabel" destination="3dh-ow-yu3" id="4yA-Gw-Lfy"/>
+                <outlet property="notifView" destination="f17-lb-Ddk" id="Fj6-Fa-Nhp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +25,31 @@
                         <action selector="onTagBoxFolderButton:" destination="-1" eventType="touchUpInside" id="Awo-rh-3Tj"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f17-lb-Ddk">
+                    <rect key="frame" x="8" y="256" width="304" height="57"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-ow-yu3">
+                            <rect key="frame" x="8" y="18" width="288" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3dh-ow-yu3" secondAttribute="trailing" constant="8" id="MSq-9y-vLb"/>
+                        <constraint firstItem="3dh-ow-yu3" firstAttribute="leading" secondItem="f17-lb-Ddk" secondAttribute="leading" constant="8" id="QqD-rj-3Hk"/>
+                        <constraint firstItem="3dh-ow-yu3" firstAttribute="top" secondItem="f17-lb-Ddk" secondAttribute="top" constant="18" id="Y9v-qk-CzS"/>
+                        <constraint firstAttribute="bottom" secondItem="3dh-ow-yu3" secondAttribute="bottom" constant="18" id="zw4-nk-FQQ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="f17-lb-Ddk" secondAttribute="trailing" constant="8" id="f9C-Tz-2A9"/>
+                <constraint firstAttribute="centerY" secondItem="f17-lb-Ddk" secondAttribute="centerY" id="nAk-vX-H3Y"/>
+                <constraint firstItem="f17-lb-Ddk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="xjQ-tf-UXT"/>
+            </constraints>
             <point key="canvasLocation" x="860" y="685"/>
         </view>
     </objects>

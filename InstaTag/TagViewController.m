@@ -13,9 +13,13 @@
 #import "BOXMetadataCreateRequest.h"
 #import "BOXMetadataUpdateRequest.h"
 #import "CamFindClient.h"
+#import "SVProgressHUD.h"
 
 @interface TagViewController () <BOXItemPickerDelegate>
 @property (nonatomic, readwrite, strong) BOXContentClient *client;
+@property (weak, nonatomic) IBOutlet UIView *notifView;
+@property (weak, nonatomic) IBOutlet UILabel *notifTextLabel;
+
 @end
 
 @implementation TagViewController
@@ -32,7 +36,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.notifView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +74,7 @@
     BOXFileDownloadRequest *boxRequest = [contentClient fileDownloadRequestWithID:file.modelID toLocalFilePath:localFilePath];
     [boxRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
         // Update a progress bar, etc.
+        [SVProgressHUD show];
     } completion:^(NSError *error) {
         // Download has completed. If it failed, error will contain reason (e.g. network connection)
         if (error != nil) {
@@ -77,7 +85,7 @@
                 if (token != nil) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSMutableDictionary *fileInfo = [@{@"fileId" : file.modelID, @"token" : token, @"retry" : @"YES"} mutableCopy];
-                        [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                        [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
                     });
                 } else {
                     NSLog(@"Error: failed to get image token");
@@ -100,33 +108,50 @@
                 [fileInfo setObject:@"NO" forKey:@"retry"];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
                 });
             } else {
-                NSLog(@"Could not get keywords %@", error);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showNotificationViewWithString:@"failed to get keywords"];
+                });
             }
         }
     }];
 }
 
 - (void)didGetFileWithFileId:(NSString *)fileId keyWords:(NSString *)keywords {
-        BOXMetadataCreateRequest *createRequest = [[BOXMetadataCreateRequest alloc] initWithFileID:fileId properties:keywords];
-        [self.client prepareRequest:createRequest];
+    BOXMetadataCreateRequest *createRequest = [[BOXMetadataCreateRequest alloc] initWithFileID:fileId properties:keywords];
+    [self.client prepareRequest:createRequest];
     
-        [createRequest performRequestWithCompletion:^(BOXMetadata *metadata, NSError *error) {
-            if (error == nil) {
-                NSLog(@"%@", metadata.properties);
-            } else {
-                NSLog(@"error %@", error.description);
-            }
-        }];
-    NSLog(@" ");
-    NSLog(@" ");
-    NSLog(@"file Id %@", fileId);
-    NSLog(@"keywords %@", keywords);
-    NSLog(@" ");
-    NSLog(@" ");
+    [createRequest performRequestWithCompletion:^(BOXMetadata *metadata, NSError *error) {
+        if (error == nil) {
+            NSLog(@"%@", metadata.properties);
+        } else {
+            NSLog(@"error %@", error.description);
+        }
+    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showNotificationViewWithString:keywords];
+    });
+}
 
+- (void)showNotificationViewWithString:(NSString *)keywords{
+    [SVProgressHUD dismiss];
+
+    self.notifView.alpha = 1;
+    self.notifView.hidden = NO;
+    self.notifTextLabel.text = [NSString stringWithFormat:@"Photo tagged with metadata: %@", keywords];
+
+    [self performSelector:@selector(hideNotificationView) withObject:nil afterDelay:4];
+}
+
+- (void)hideNotificationView {
+    [UIView animateWithDuration:1.3 animations:^{
+        self.notifView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.notifView.hidden = YES;
+    }];
 }
 
 
