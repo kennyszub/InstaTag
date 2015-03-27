@@ -73,19 +73,22 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString* path = [documentsDirectory stringByAppendingPathComponent:@"temp2.png"];
-    NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:path];
-
-    NSData* data = UIImagePNGRepresentation(editedImage);
-    [data writeToFile:path atomically:YES];
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+//                                                         NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString* path = [documentsDirectory stringByAppendingPathComponent:@"temp2.png"];
+//    NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:path];
+//
+//    NSData* data = UIImagePNGRepresentation(editedImage);
+//    [data writeToFile:path atomically:YES];
     
+    NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.jpg"];
+    [UIImageJPEGRepresentation(editedImage, 1.0) writeToFile:jpgPath atomically:YES];
+    NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:jpgPath];
     
     
     BOXContentClient *contentClient = [BOXContentClient defaultClient];
-    BOXFileUploadRequest *uploadRequest = [contentClient fileUploadRequestToFolderWithID:@"0" fromLocalFilePath:path];
+    BOXFileUploadRequest *uploadRequest = [contentClient fileUploadRequestToFolderWithID:@"0" fromLocalFilePath:jpgPath];
     [SVProgressHUD show];
 
     [uploadRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
