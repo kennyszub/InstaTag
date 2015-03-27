@@ -12,8 +12,10 @@
 		C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C497E59D1AC51DF200476FC9 /* Images.xcassets */; };
 		C497E5A11AC51DF200476FC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E59F1AC51DF200476FC9 /* LaunchScreen.xib */; };
 		C497E5AD1AC51DF200476FC9 /* InstaTagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5AC1AC51DF200476FC9 /* InstaTagTests.m */; };
-		C497E5BC1AC531A000476FC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5BA1AC531A000476FC9 /* HomeViewController.m */; };
-		C497E5BD1AC531A000476FC9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E5BB1AC531A000476FC9 /* HomeViewController.xib */; };
+		C497E5C11AC538CD00476FC9 /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5BF1AC538CD00476FC9 /* BrowseViewController.m */; };
+		C497E5C21AC538CD00476FC9 /* BrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E5C01AC538CD00476FC9 /* BrowseViewController.xib */; };
+		C497E5C61AC538E300476FC9 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5C41AC538E300476FC9 /* TagViewController.m */; };
+		C497E5C71AC538E300476FC9 /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E5C51AC538E300476FC9 /* TagViewController.xib */; };
 		FD2DBE83B27F79F97F688002 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CF3792433C9E48611CAB07 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +43,12 @@
 		C497E5A61AC51DF200476FC9 /* InstaTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C497E5AB1AC51DF200476FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C497E5AC1AC51DF200476FC9 /* InstaTagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaTagTests.m; sourceTree = "<group>"; };
-		C497E5B91AC531A000476FC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		C497E5BA1AC531A000476FC9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		C497E5BB1AC531A000476FC9 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		C497E5BE1AC538CD00476FC9 /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
+		C497E5BF1AC538CD00476FC9 /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
+		C497E5C01AC538CD00476FC9 /* BrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseViewController.xib; sourceTree = "<group>"; };
+		C497E5C31AC538E300476FC9 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		C497E5C41AC538E300476FC9 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		C497E5C51AC538E300476FC9 /* TagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +148,12 @@
 		C497E5B81AC521B900476FC9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C497E5B91AC531A000476FC9 /* HomeViewController.h */,
-				C497E5BA1AC531A000476FC9 /* HomeViewController.m */,
-				C497E5BB1AC531A000476FC9 /* HomeViewController.xib */,
+				C497E5BE1AC538CD00476FC9 /* BrowseViewController.h */,
+				C497E5BF1AC538CD00476FC9 /* BrowseViewController.m */,
+				C497E5C01AC538CD00476FC9 /* BrowseViewController.xib */,
+				C497E5C31AC538E300476FC9 /* TagViewController.h */,
+				C497E5C41AC538E300476FC9 /* TagViewController.m */,
+				C497E5C51AC538E300476FC9 /* TagViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -250,8 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C497E5A11AC51DF200476FC9 /* LaunchScreen.xib in Resources */,
+				C497E5C71AC538E300476FC9 /* TagViewController.xib in Resources */,
+				C497E5C21AC538CD00476FC9 /* BrowseViewController.xib in Resources */,
 				C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */,
-				C497E5BD1AC531A000476FC9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
+				C497E5C61AC538E300476FC9 /* TagViewController.m in Sources */,
+				C497E5C11AC538CD00476FC9 /* BrowseViewController.m in Sources */,
 				C497E5931AC51DF200476FC9 /* main.m in Sources */,
-				C497E5BC1AC531A000476FC9 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

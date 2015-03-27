@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
+#import "BrowseViewController.h"
+#import "TagViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,21 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+
+    self.window.rootViewController = tabController;
     
-    HomeViewController *hvc = [[HomeViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
-    self.window.rootViewController = nvc;
+    BrowseViewController *bvc = [[BrowseViewController alloc] init];
+    TagViewController *tvc = [[TagViewController alloc] init];
+    
+    bvc.tabBarItem.title = @"Browse";
+//    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+    tvc.tabBarItem.title = @"Tag";
+//    tvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+
+    tabController.viewControllers = @[bvc, tvc];
+    
     [self.window makeKeyAndVisible];
     
     return YES;

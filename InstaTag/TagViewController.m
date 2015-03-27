@@ -1,18 +1,18 @@
 //
-//  HomeViewController.m
+//  TagViewController.m
 //  InstaTag
 //
-//  Created by Ken Szubzda on 3/26/15.
+//  Created by Ken Szubzda on 3/27/15.
 //  Copyright (c) 2015 OkStupid. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "TagViewController.h"
 
-@interface HomeViewController ()
+@interface TagViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation TagViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
