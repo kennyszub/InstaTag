@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-ap-Pxm">
-                    <rect key="frame" x="104" y="430" width="112" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-ap-Pxm">
+                    <rect key="frame" x="104" y="224" width="112" height="30"/>
                     <state key="normal" title="Tag a Box folder">
                         <color key="titleColor" red="0.1019607843" green="0.7843137255" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -29,7 +29,7 @@
                     <rect key="frame" x="8" y="256" width="304" height="57"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-ow-yu3">
-                            <rect key="frame" x="8" y="18" width="288" height="20.5"/>
+                            <rect key="frame" x="8" y="18" width="288" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -43,8 +43,14 @@
                         <constraint firstAttribute="bottom" secondItem="3dh-ow-yu3" secondAttribute="bottom" constant="18" id="zw4-nk-FQQ"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-Wk-uc9">
-                    <rect key="frame" x="112" y="468" width="96" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a photo to automatically tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-5t-ffB">
+                    <rect key="frame" x="19" y="135" width="283" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.1019607843" green="0.7843137255" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-Wk-uc9">
+                    <rect key="frame" x="112" y="262" width="96" height="30"/>
                     <state key="normal" title="Take a picture">
                         <color key="titleColor" red="0.1019607843" green="0.7843137255" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,20 +59,16 @@
                         <action selector="onTakePictureButton:" destination="-1" eventType="touchUpInside" id="lnW-SR-T1g"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a photo to automatically tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-5t-ffB">
-                    <rect key="frame" x="19" y="135" width="283" height="21"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                    <color key="textColor" red="0.1019607843" green="0.7843137255" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="g1e-ap-Pxm" secondAttribute="centerX" id="0QL-Gg-549"/>
-                <constraint firstItem="g1e-ap-Pxm" firstAttribute="top" secondItem="f17-lb-Ddk" secondAttribute="bottom" constant="117" id="5FL-NT-agX"/>
+                <constraint firstItem="g1e-ap-Pxm" firstAttribute="top" secondItem="f17-lb-Ddk" secondAttribute="bottom" constant="-89" id="5FL-NT-agX"/>
+                <constraint firstAttribute="centerX" secondItem="3DD-5t-ffB" secondAttribute="centerX" id="JWx-sg-U7q"/>
+                <constraint firstItem="3DD-5t-ffB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="135" id="Jd2-Ac-X89"/>
                 <constraint firstAttribute="trailing" secondItem="f17-lb-Ddk" secondAttribute="trailing" constant="8" id="f9C-Tz-2A9"/>
                 <constraint firstAttribute="centerY" secondItem="f17-lb-Ddk" secondAttribute="centerY" id="nAk-vX-H3Y"/>
-                <constraint firstAttribute="bottom" secondItem="nWI-Wk-uc9" secondAttribute="bottom" constant="70" id="otr-PQ-3ip"/>
+                <constraint firstAttribute="bottom" secondItem="nWI-Wk-uc9" secondAttribute="bottom" constant="276" id="otr-PQ-3ip"/>
                 <constraint firstItem="nWI-Wk-uc9" firstAttribute="top" secondItem="g1e-ap-Pxm" secondAttribute="bottom" constant="8" id="w7M-Qw-6ef"/>
                 <constraint firstItem="f17-lb-Ddk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="xjQ-tf-UXT"/>
                 <constraint firstAttribute="centerX" secondItem="nWI-Wk-uc9" secondAttribute="centerX" id="yCS-gU-WZl"/>
