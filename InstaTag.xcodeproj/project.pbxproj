@@ -14,6 +14,10 @@
 		112F01B71AC5770900FCB44D /* BrowseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01B51AC5770900FCB44D /* BrowseCollectionViewCell.m */; };
 		112F01B81AC5770900FCB44D /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */; };
 		11F614771AC586AA001F967D /* BOXSampleThumbnailsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F614761AC586AA001F967D /* BOXSampleThumbnailsHelper.m */; };
+		11F6147B1AC58C56001F967D /* MetadataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F614791AC58C56001F967D /* MetadataViewController.m */; };
+		11F6147C1AC58C56001F967D /* MetadataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F6147A1AC58C56001F967D /* MetadataViewController.xib */; };
+		11F6147F1AC58D7A001F967D /* DetailsCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F6147E1AC58D7A001F967D /* DetailsCustomView.m */; };
+		11F614811AC58D8B001F967D /* DetailsCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F614801AC58D8B001F967D /* DetailsCustomView.xib */; };
 		C497E5931AC51DF200476FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5921AC51DF200476FC9 /* main.m */; };
 		C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5951AC51DF200476FC9 /* AppDelegate.m */; };
 		C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C497E59D1AC51DF200476FC9 /* Images.xcassets */; };
@@ -53,6 +57,12 @@
 		112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
 		11F614751AC586AA001F967D /* BOXSampleThumbnailsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXSampleThumbnailsHelper.h; sourceTree = "<group>"; };
 		11F614761AC586AA001F967D /* BOXSampleThumbnailsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXSampleThumbnailsHelper.m; sourceTree = "<group>"; };
+		11F614781AC58C56001F967D /* MetadataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetadataViewController.h; sourceTree = "<group>"; };
+		11F614791AC58C56001F967D /* MetadataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetadataViewController.m; sourceTree = "<group>"; };
+		11F6147A1AC58C56001F967D /* MetadataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetadataViewController.xib; sourceTree = "<group>"; };
+		11F6147D1AC58D7A001F967D /* DetailsCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCustomView.h; sourceTree = "<group>"; };
+		11F6147E1AC58D7A001F967D /* DetailsCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCustomView.m; sourceTree = "<group>"; };
+		11F614801AC58D8B001F967D /* DetailsCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsCustomView.xib; sourceTree = "<group>"; };
 		4852EB4A7EDF1669DD3C67CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		99C4941343C342BD4AB1D695 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2CF3792433C9E48611CAB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +193,9 @@
 				112F01B41AC5770900FCB44D /* BrowseCollectionViewCell.h */,
 				112F01B51AC5770900FCB44D /* BrowseCollectionViewCell.m */,
 				112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */,
+				11F6147D1AC58D7A001F967D /* DetailsCustomView.h */,
+				11F6147E1AC58D7A001F967D /* DetailsCustomView.m */,
+				11F614801AC58D8B001F967D /* DetailsCustomView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -199,6 +212,9 @@
 				C497E5C31AC538E300476FC9 /* TagViewController.h */,
 				C497E5C41AC538E300476FC9 /* TagViewController.m */,
 				C497E5C51AC538E300476FC9 /* TagViewController.xib */,
+				11F614781AC58C56001F967D /* MetadataViewController.h */,
+				11F614791AC58C56001F967D /* MetadataViewController.m */,
+				11F6147A1AC58C56001F967D /* MetadataViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -313,9 +329,11 @@
 			files = (
 				C497E5D11AC53FAB00476FC9 /* LoginViewController.xib in Resources */,
 				C497E5A11AC51DF200476FC9 /* LaunchScreen.xib in Resources */,
+				11F614811AC58D8B001F967D /* DetailsCustomView.xib in Resources */,
 				112F01B81AC5770900FCB44D /* BrowseCollectionViewCell.xib in Resources */,
 				C497E5C71AC538E300476FC9 /* TagViewController.xib in Resources */,
 				C497E5C21AC538CD00476FC9 /* BrowseViewController.xib in Resources */,
+				11F6147C1AC58C56001F967D /* MetadataViewController.xib in Resources */,
 				C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,9 +385,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F6147F1AC58D7A001F967D /* DetailsCustomView.m in Sources */,
 				11F614771AC586AA001F967D /* BOXSampleThumbnailsHelper.m in Sources */,
 				112F01AE1AC569F500FCB44D /* BOXMetadataUpdateRequest.m in Sources */,
 				112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */,
+				11F6147B1AC58C56001F967D /* MetadataViewController.m in Sources */,
 				112F01B71AC5770900FCB44D /* BrowseCollectionViewCell.m in Sources */,
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
 				112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */,

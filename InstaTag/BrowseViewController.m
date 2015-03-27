@@ -15,6 +15,7 @@
 #import <BoxContentSDK/BOXContentSDK.h>
 #import "BrowseCollectionViewCell.h"
 #import "BOXSampleThumbnailsHelper.h"
+#import "MetadataViewController.h"
 
 @interface BrowseViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, readwrite, strong) BOXContentClient *client;
@@ -104,6 +105,12 @@
     cell.file = (BOXFile *)self.files[indexPath.row];
     cell.client = self.client;
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MetadataViewController *vc = [[MetadataViewController alloc] initWithClient:self.client files:self.files startingIndex:indexPath.row];
+    [self presentViewController:vc animated:YES completion:nil];
+    //[self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
 }
 
 /*
