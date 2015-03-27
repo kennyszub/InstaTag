@@ -76,8 +76,8 @@
             [camFind imageRequestWithURL:localURLPath completion:^(NSString *token, NSError *error) {
                 if (token != nil) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        NSDictionary *fileInfo = @{@"fileId" : file.modelID, @"token" : token};
-                        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                        NSMutableDictionary *fileInfo = [@{@"fileId" : file.modelID, @"token" : token, @"retry" : @"YES"} mutableCopy];
+                        [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
                     });
                 } else {
                     NSLog(@"Error: failed to get image token");
@@ -89,12 +89,22 @@
 
 - (void)getImageResponse:(NSTimer *)timer {
     CamFindClient *camFind = [[CamFindClient alloc] init];
-    NSDictionary *fileInfo = timer.userInfo;
+    NSMutableDictionary *fileInfo = timer.userInfo;
     [camFind imageResponseWithToken:fileInfo[@"token"] completion:^(NSString *keyWords, NSError *error) {
         if (keyWords != nil) {
             [self didGetFileWithFileId:fileInfo[@"fileId"] keyWords:keyWords];
         } else {
-            NSLog(@"ERROR %@", error);
+            if ([error.userInfo[@"reason"] isEqualToString:@"not completed"] && [fileInfo[@"retry"] isEqualToString:@"YES"]) {
+                NSLog(@"retrying for reason: %@", error.userInfo[@"reason"]);
+                // attempt one more time
+                [fileInfo setObject:@"NO" forKey:@"retry"];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                });
+            } else {
+                NSLog(@"Could not get keywords %@", error);
+            }
         }
     }];
 }
