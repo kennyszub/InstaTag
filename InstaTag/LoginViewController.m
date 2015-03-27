@@ -40,6 +40,7 @@
 }
 
 - (IBAction)onLoginButton:(id)sender {
+    //[BOXContentClient logOutAll];
     BOXContentClient *client = [BOXContentClient defaultClient];
     [client authenticateWithCompletionBlock:^(BOXUser *user, NSError *error) {
         if (error) {

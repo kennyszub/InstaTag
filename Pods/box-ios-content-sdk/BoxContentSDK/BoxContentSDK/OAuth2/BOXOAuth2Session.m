@@ -402,7 +402,7 @@ static NSString *staticKeychainAccessGroup;
                 }
             }
         }
-        CFRelease(keychainQueryResult);
+//        CFRelease(keychainQueryResult);
     }
     
     NSArray *sortedUsers = [users sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {

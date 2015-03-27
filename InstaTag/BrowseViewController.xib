@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrowseViewController">
             <connections>
                 <outlet property="collectionView" destination="jGW-oM-1yR" id="elA-t1-3Q4"/>
+                <outlet property="searchBar" destination="4eg-0g-vZo" id="AWV-eL-2ii"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jGW-oM-1yR">
-                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="HaP-sN-sqX">
                         <size key="itemSize" width="160" height="160"/>
@@ -25,13 +26,20 @@
                         <inset key="sectionInset" minX="18" minY="5" maxX="18" maxY="5"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4eg-0g-vZo">
+                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="4eg-0g-vZo" secondAttribute="trailing" id="Maa-eG-bJI"/>
+                <constraint firstItem="jGW-oM-1yR" firstAttribute="top" secondItem="4eg-0g-vZo" secondAttribute="bottom" id="Z2T-3L-GN4"/>
                 <constraint firstAttribute="bottom" secondItem="jGW-oM-1yR" secondAttribute="bottom" id="ZDa-M3-Q6U"/>
                 <constraint firstItem="jGW-oM-1yR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dcZ-ig-DfC"/>
-                <constraint firstAttribute="trailing" secondItem="jGW-oM-1yR" secondAttribute="trailing" id="qcm-cF-EPB"/>
-                <constraint firstItem="jGW-oM-1yR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="vkE-K6-mp6"/>
+                <constraint firstItem="4eg-0g-vZo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gml-ji-ycT"/>
+                <constraint firstAttribute="trailing" secondItem="jGW-oM-1yR" secondAttribute="trailing" id="qbQ-PG-eHd"/>
+                <constraint firstItem="4eg-0g-vZo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="svq-eE-Y0E"/>
             </constraints>
             <point key="canvasLocation" x="140" y="154"/>
         </view>

@@ -53,7 +53,7 @@
             NSLog(@"%@", metadata.properties);
             self.metadataLabel.text = metadata.properties;
         } else {
-            NSLog(@"error %@", error.description);
+            NSLog(@"metadata error %@", error.description);
         }
     }];
     [self updateThumbnail];
