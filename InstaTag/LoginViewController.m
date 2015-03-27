@@ -27,8 +27,9 @@
     
     bvc.tabBarItem.title = @"Browse";
     //    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+    bvc.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
     tvc.tabBarItem.title = @"Tag";
-    //    tvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
+    tvc.tabBarItem.image = [UIImage imageNamed:@"priceTag"];
     
     tabController.viewControllers = @[bvc, tvc];
     self.tabController = tabController;

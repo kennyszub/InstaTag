@@ -15,7 +15,7 @@
 #import "CamFindClient.h"
 #import "SVProgressHUD.h"
 
-@interface TagViewController () <BOXItemPickerDelegate>
+@interface TagViewController () <BOXItemPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readwrite, strong) BOXContentClient *client;
 @property (weak, nonatomic) IBOutlet UIView *notifView;
 @property (weak, nonatomic) IBOutlet UILabel *notifTextLabel;
@@ -57,6 +57,58 @@
     [self presentViewController:navController animated:YES completion:nil];
     
 }
+- (IBAction)onTakePictureButton:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:@"temp2.png"];
+    NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:path];
+
+    NSData* data = UIImagePNGRepresentation(editedImage);
+    [data writeToFile:path atomically:YES];
+    
+    
+    
+    BOXContentClient *contentClient = [BOXContentClient defaultClient];
+    NSString *localFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:path];
+    BOXFileUploadRequest *uploadRequest = [contentClient fileUploadRequestToFolderWithID:@"0" fromLocalFilePath:localFilePath];
+    [SVProgressHUD show];
+
+    [uploadRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
+        // Update a progress bar, etc.
+    } completion:^(BOXFile *file, NSError *error) {
+        // Upload has completed. If successful, file will be non-nil; otherwise, error will be non-nil.
+        if (error != nil) {
+            NSLog(@"Error downloading: %@", error);
+        } else {
+            CamFindClient *camFind = [[CamFindClient alloc] init];
+            [camFind imageRequestWithURL:localURLPath completion:^(NSString *token, NSError *error) {
+                if (token != nil) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSMutableDictionary *fileInfo = [@{@"fileId" : file.modelID, @"token" : token, @"retry" : @"YES"} mutableCopy];
+                        [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                    });
+                } else {
+                    NSLog(@"Error: failed to get image token");
+                }
+            }];
+        }
+    }];
+    
+}
 
 #pragma mark file picker delegate methods
 - (void)itemPickerControllerDidCancel:(BOXItemPickerViewController *)controller {
@@ -72,9 +124,9 @@
     NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:localFilePath];
     
     BOXFileDownloadRequest *boxRequest = [contentClient fileDownloadRequestWithID:file.modelID toLocalFilePath:localFilePath];
+    [SVProgressHUD show];
     [boxRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
         // Update a progress bar, etc.
-        [SVProgressHUD show];
     } completion:^(NSError *error) {
         // Download has completed. If it failed, error will contain reason (e.g. network connection)
         if (error != nil) {
