@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "BrowseViewController.h"
 #import "TagViewController.h"
-#import "HomeViewController.h"
+#import "LoginViewController.h"
 #import <BoxContentSDK/BOXContentSDK.h>
 
 @interface AppDelegate ()
@@ -24,20 +24,9 @@
     
     [BOXContentClient setClientID:@"8g05vv5jk10g36pwlnwlcgpxb841fu0a" clientSecret:@"hU3gHlLsOZGFe5HWS6EbbzrOYQUEEPYi"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    UITabBarController *tabController = [[UITabBarController alloc] init];
-
-    self.window.rootViewController = tabController;
     
-    BrowseViewController *bvc = [[BrowseViewController alloc] init];
-    TagViewController *tvc = [[TagViewController alloc] init];
-    
-    bvc.tabBarItem.title = @"Browse";
-//    bvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
-    tvc.tabBarItem.title = @"Tag";
-//    tvc.tabBarItem.image = [UIImage imageNamed:@"INSERTHERE"];
-
-    tabController.viewControllers = @[bvc, tvc];
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    self.window.rootViewController = lvc;
     
     [self.window makeKeyAndVisible];
     
