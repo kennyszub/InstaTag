@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 2
 
+// Unirest
+#define COCOAPODS_POD_AVAILABLE_Unirest
+#define COCOAPODS_VERSION_MAJOR_Unirest 1
+#define COCOAPODS_VERSION_MINOR_Unirest 1
+#define COCOAPODS_VERSION_PATCH_Unirest 4
+
 // box-ios-content-sdk
 #define COCOAPODS_POD_AVAILABLE_box_ios_content_sdk
 #define COCOAPODS_VERSION_MAJOR_box_ios_content_sdk 1

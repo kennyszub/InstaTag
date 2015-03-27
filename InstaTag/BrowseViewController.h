@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BoxContentSDK/BOXContentSDK.h>
 
 @interface BrowseViewController : UIViewController
 - (instancetype)initWithClient:(BOXContentClient *)client;

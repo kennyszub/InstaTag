@@ -12,6 +12,7 @@
 #import "BOXMetadata.h"
 #import "BOXMetadataCreateRequest.h"
 #import "BOXMetadataUpdateRequest.h"
+#import "CamFindClient.h"
 
 @interface TagViewController () <BOXItemPickerDelegate>
 @property (nonatomic, readwrite, strong) BOXContentClient *client;
@@ -57,7 +58,52 @@
 
 - (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFile:(BOXFile *)file {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    BOXContentClient *contentClient = [BOXContentClient defaultClient];
+    
+    NSString *localFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp.jpg"];
+    NSURL *localURLPath = [[NSURL alloc] initFileURLWithPath:localFilePath];
+    
+    BOXFileDownloadRequest *boxRequest = [contentClient fileDownloadRequestWithID:file.modelID toLocalFilePath:localFilePath];
+    [boxRequest performRequestWithProgress:^(long long totalBytesTransferred, long long totalBytesExpectedToTransfer) {
+        // Update a progress bar, etc.
+    } completion:^(NSError *error) {
+        // Download has completed. If it failed, error will contain reason (e.g. network connection)
+        if (error != nil) {
+            NSLog(@"Error downloading: %@", error);
+        } else {
+            CamFindClient *camFind = [[CamFindClient alloc] init];
+            [camFind imageRequestWithURL:localURLPath completion:^(NSString *token, NSError *error) {
+                if (token != nil) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSDictionary *fileInfo = @{@"fileId" : file.modelID, @"token" : token};
+                        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getImageResponse:) userInfo:fileInfo repeats:NO];
+                    });
+                } else {
+                    NSLog(@"Error: failed to get image token");
+                }
+            }];
+        }
+    }];
 }
+
+- (void)getImageResponse:(NSTimer *)timer {
+    CamFindClient *camFind = [[CamFindClient alloc] init];
+    NSDictionary *fileInfo = timer.userInfo;
+    [camFind imageResponseWithToken:fileInfo[@"token"] completion:^(NSString *keyWords, NSError *error) {
+        if (keyWords != nil) {
+            [self didGetFileWithFileId:fileInfo[@"fileId"] keyWords:keyWords];
+        } else {
+            NSLog(@"ERROR %@", error);
+        }
+    }];
+}
+
+- (void)didGetFileWithFileId:(NSString *)fileId keyWords:(NSString *)keywords {
+    NSLog(@"file Id %@", fileId);
+    NSLog(@"keywords %@", keywords);
+}
+
 
 - (void)itemPickerController:(BOXItemPickerViewController *)controller didSelectBoxFolder:(BOXFolder *)folder {
     [self dismissViewControllerAnimated:YES completion:nil];

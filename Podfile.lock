@@ -26,10 +26,12 @@ PODS:
   - box-ios-content-sdk/logger (1.0.0)
   - box-ios-content-sdk/no-arc (1.0.0):
     - box-ios-content-sdk/logger
+  - Unirest (1.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - box-ios-content-sdk (from `git@gitenterprise.inside-box.net:Mobile/box-ios-content-sdk.git`, branch `dev`)
+  - Unirest (~> 1.1.4)
 
 EXTERNAL SOURCES:
   box-ios-content-sdk:
@@ -44,5 +46,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   box-ios-content-sdk: 2d782cb7f1ac468ea9a2c61610998c7167e2a4df
+  Unirest: 080f37fba1e7ac51a1a3e1554de096a18d2ce14c
 
 COCOAPODS: 0.35.0

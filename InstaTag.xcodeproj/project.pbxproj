@@ -22,6 +22,7 @@
 		C497E5C71AC538E300476FC9 /* TagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E5C51AC538E300476FC9 /* TagViewController.xib */; };
 		C497E5D01AC53FAB00476FC9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5CE1AC53FAB00476FC9 /* LoginViewController.m */; };
 		C497E5D11AC53FAB00476FC9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C497E5CF1AC53FAB00476FC9 /* LoginViewController.xib */; };
+		C497E5D51AC5670000476FC9 /* CamFindClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5D41AC5670000476FC9 /* CamFindClient.m */; };
 		FD2DBE83B27F79F97F688002 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CF3792433C9E48611CAB07 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		C497E5CD1AC53FAB00476FC9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C497E5CE1AC53FAB00476FC9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C497E5CF1AC53FAB00476FC9 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C497E5D31AC5670000476FC9 /* CamFindClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamFindClient.h; sourceTree = "<group>"; };
+		C497E5D41AC5670000476FC9 /* CamFindClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamFindClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		C497E58F1AC51DF200476FC9 /* InstaTag */ = {
 			isa = PBXGroup;
 			children = (
+				C497E5D21AC55CBF00476FC9 /* API */,
 				C497E5B81AC521B900476FC9 /* View Controllers */,
 				C497E5B71AC521B300476FC9 /* Views */,
 				C497E5B61AC521AA00476FC9 /* Models */,
@@ -184,6 +188,15 @@
 				C497E5C51AC538E300476FC9 /* TagViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C497E5D21AC55CBF00476FC9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C497E5D31AC5670000476FC9 /* CamFindClient.h */,
+				C497E5D41AC5670000476FC9 /* CamFindClient.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		F62EC0ED0F2D6EBAAAEC5B15 /* Frameworks */ = {
@@ -344,6 +357,7 @@
 				112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */,
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
 				112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */,
+				C497E5D51AC5670000476FC9 /* CamFindClient.m in Sources */,
 				C497E5C61AC538E300476FC9 /* TagViewController.m in Sources */,
 				112F01AB1AC5621E00FCB44D /* BOXMetadataCreateRequest.m in Sources */,
 				C497E5C11AC538CD00476FC9 /* BrowseViewController.m in Sources */,
