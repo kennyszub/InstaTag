@@ -110,8 +110,23 @@
 }
 
 - (void)didGetFileWithFileId:(NSString *)fileId keyWords:(NSString *)keywords {
+        BOXMetadataCreateRequest *createRequest = [[BOXMetadataCreateRequest alloc] initWithFileID:fileId properties:keywords];
+        [self.client prepareRequest:createRequest];
+    
+        [createRequest performRequestWithCompletion:^(BOXMetadata *metadata, NSError *error) {
+            if (error == nil) {
+                NSLog(@"%@", metadata.properties);
+            } else {
+                NSLog(@"error %@", error.description);
+            }
+        }];
+    NSLog(@" ");
+    NSLog(@" ");
     NSLog(@"file Id %@", fileId);
     NSLog(@"keywords %@", keywords);
+    NSLog(@" ");
+    NSLog(@" ");
+
 }
 
 

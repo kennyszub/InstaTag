@@ -13,9 +13,13 @@
 #import "BOXMetadata.h"
 #import "BOXContentClient.h"
 #import <BoxContentSDK/BOXContentSDK.h>
+#import "BrowseCollectionViewCell.h"
+#import "BOXSampleThumbnailsHelper.h"
 
-@interface BrowseViewController ()
+@interface BrowseViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, readwrite, strong) BOXContentClient *client;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *files;
 @end
 
 @implementation BrowseViewController
@@ -31,6 +35,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.files = [NSMutableArray array];
+    BOXPaginatedItemArrayRequest *itemsRequest = [self.client folderItemsRequestWithID:@"0" inRange:NSMakeRange(0,1000)];
+    itemsRequest.requestAllItemFields = YES;
+    
+    [itemsRequest performRequestWithCompletion:^(NSArray *items, NSUInteger totalCount, NSRange range, NSError *error) {
+        for (BOXItem *item in items) {
+            if ([item.type isEqualToString:BOXAPIItemTypeFile] && [[BOXSampleThumbnailsHelper sharedInstance] shouldDownloadThumbnailForItemWithName:item.name]) {
+                [self.files addObject:item];
+            }
+        }
+        [self.collectionView reloadData];
+    }];
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"BrowseCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BrowseCollectionViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +93,17 @@
         }
     }];
     
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.files.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BrowseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BrowseCollectionViewCell" forIndexPath:indexPath];
+    cell.file = (BOXFile *)self.files[indexPath.row];
+    cell.client = self.client;
+    return cell;
 }
 
 /*

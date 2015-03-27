@@ -11,6 +11,9 @@
 		112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01A71AC54FB400FCB44D /* BOXMetadataInfoRequest.m */; };
 		112F01AB1AC5621E00FCB44D /* BOXMetadataCreateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01AA1AC5621E00FCB44D /* BOXMetadataCreateRequest.m */; };
 		112F01AE1AC569F500FCB44D /* BOXMetadataUpdateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01AD1AC569F500FCB44D /* BOXMetadataUpdateRequest.m */; };
+		112F01B71AC5770900FCB44D /* BrowseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 112F01B51AC5770900FCB44D /* BrowseCollectionViewCell.m */; };
+		112F01B81AC5770900FCB44D /* BrowseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */; };
+		11F614771AC586AA001F967D /* BOXSampleThumbnailsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F614761AC586AA001F967D /* BOXSampleThumbnailsHelper.m */; };
 		C497E5931AC51DF200476FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5921AC51DF200476FC9 /* main.m */; };
 		C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C497E5951AC51DF200476FC9 /* AppDelegate.m */; };
 		C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C497E59D1AC51DF200476FC9 /* Images.xcassets */; };
@@ -45,6 +48,11 @@
 		112F01AA1AC5621E00FCB44D /* BOXMetadataCreateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadataCreateRequest.m; sourceTree = "<group>"; };
 		112F01AC1AC569F500FCB44D /* BOXMetadataUpdateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXMetadataUpdateRequest.h; sourceTree = "<group>"; };
 		112F01AD1AC569F500FCB44D /* BOXMetadataUpdateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXMetadataUpdateRequest.m; sourceTree = "<group>"; };
+		112F01B41AC5770900FCB44D /* BrowseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCollectionViewCell.h; sourceTree = "<group>"; };
+		112F01B51AC5770900FCB44D /* BrowseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCollectionViewCell.m; sourceTree = "<group>"; };
+		112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseCollectionViewCell.xib; sourceTree = "<group>"; };
+		11F614751AC586AA001F967D /* BOXSampleThumbnailsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOXSampleThumbnailsHelper.h; sourceTree = "<group>"; };
+		11F614761AC586AA001F967D /* BOXSampleThumbnailsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOXSampleThumbnailsHelper.m; sourceTree = "<group>"; };
 		4852EB4A7EDF1669DD3C67CA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		99C4941343C342BD4AB1D695 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2CF3792433C9E48611CAB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +130,8 @@
 				C497E59D1AC51DF200476FC9 /* Images.xcassets */,
 				C497E59F1AC51DF200476FC9 /* LaunchScreen.xib */,
 				C497E5901AC51DF200476FC9 /* Supporting Files */,
+				11F614751AC586AA001F967D /* BOXSampleThumbnailsHelper.h */,
+				11F614761AC586AA001F967D /* BOXSampleThumbnailsHelper.m */,
 			);
 			path = InstaTag;
 			sourceTree = "<group>";
@@ -170,6 +180,9 @@
 		C497E5B71AC521B300476FC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				112F01B41AC5770900FCB44D /* BrowseCollectionViewCell.h */,
+				112F01B51AC5770900FCB44D /* BrowseCollectionViewCell.m */,
+				112F01B61AC5770900FCB44D /* BrowseCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,6 +313,7 @@
 			files = (
 				C497E5D11AC53FAB00476FC9 /* LoginViewController.xib in Resources */,
 				C497E5A11AC51DF200476FC9 /* LaunchScreen.xib in Resources */,
+				112F01B81AC5770900FCB44D /* BrowseCollectionViewCell.xib in Resources */,
 				C497E5C71AC538E300476FC9 /* TagViewController.xib in Resources */,
 				C497E5C21AC538CD00476FC9 /* BrowseViewController.xib in Resources */,
 				C497E59E1AC51DF200476FC9 /* Images.xcassets in Resources */,
@@ -353,8 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F614771AC586AA001F967D /* BOXSampleThumbnailsHelper.m in Sources */,
 				112F01AE1AC569F500FCB44D /* BOXMetadataUpdateRequest.m in Sources */,
 				112F01A51AC547D600FCB44D /* BOXMetadata.m in Sources */,
+				112F01B71AC5770900FCB44D /* BrowseCollectionViewCell.m in Sources */,
 				C497E5961AC51DF200476FC9 /* AppDelegate.m in Sources */,
 				112F01A81AC54FB400FCB44D /* BOXMetadataInfoRequest.m in Sources */,
 				C497E5D51AC5670000476FC9 /* CamFindClient.m in Sources */,
